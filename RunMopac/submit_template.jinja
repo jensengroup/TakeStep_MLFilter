@@ -1,0 +1,14 @@
+#!/bin/sh
+#SBATCH --job-name={{jobname}}
+#SBATCH --cpus-per-task={{ncpus}}
+#SBATCH --ntasks=1
+#SBATCH --error={{pwd}}/{{jobname}}\_%j.err
+#SBATCH --output={{pwd}}/{{jobname}}\_%j.out
+#SBATCH --time=48:00:00
+#SBATCH --partition={{partition}}
+#SBATCH --account=chemistry
+#SBATCH --mem={{mem}}
+
+cd $SCRATCH 
+/groups/kemi/koerstz/TakeStep_ML/run_mopac.py {{pwd}}/{{input_file}}
+
