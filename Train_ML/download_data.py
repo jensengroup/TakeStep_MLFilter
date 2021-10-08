@@ -37,4 +37,7 @@ def download_models():
 
 if __name__ == "__main__":
     
+    os.mkdirs('processed_data')
+    os.mkdirs('models')
+
     download_processed_data()
